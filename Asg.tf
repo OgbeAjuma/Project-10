@@ -1,5 +1,5 @@
 resource "aws_launch_configuration" "elb_launch_config10" {
-  image_id      = "ami-0fc15d50d39e4503c"
+  image_id      = var.Ami-id1
   instance_type = "t2.micro"
   security_groups = [aws_security_group.SG-proj10.id]
 

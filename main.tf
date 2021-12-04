@@ -1,5 +1,5 @@
 resource "aws_vpc" "project-10" {
-  cidr_block       = "10.0.0.0/16"
+  cidr_block       = var.vpc-cidr01
   instance_tenancy = "default"
 
   tags = {
@@ -11,7 +11,7 @@ resource "aws_vpc" "project-10" {
 
 resource "aws_subnet" "pubsub-001" {
   vpc_id     = aws_vpc.project-10.id
-  cidr_block = "10.0.1.0/24"
+  cidr_block = var.publsub001
   availability_zone = "eu-west-2a"
   map_public_ip_on_launch = true
 
@@ -22,7 +22,7 @@ resource "aws_subnet" "pubsub-001" {
 
 resource "aws_subnet" "pubsub-002" {
   vpc_id     = aws_vpc.project-10.id
-  cidr_block = "10.0.2.0/24"
+  cidr_block = var.publsub002
   availability_zone = "eu-west-2b"
   map_public_ip_on_launch = true
 
@@ -33,7 +33,7 @@ resource "aws_subnet" "pubsub-002" {
 
 resource "aws_subnet" "pubsub-003" {
   vpc_id     = aws_vpc.project-10.id
-  cidr_block = "10.0.3.0/24"
+  cidr_block = var.publsub003
   availability_zone = "eu-west-2c"
   map_public_ip_on_launch = true
 
@@ -45,7 +45,7 @@ resource "aws_subnet" "pubsub-003" {
 
 resource "aws_subnet" "privsub-001" {
   vpc_id     = aws_vpc.project-10.id
-  cidr_block = "10.0.4.0/24"
+  cidr_block = var.privasub001
   availability_zone = "eu-west-2a"
   map_public_ip_on_launch = true
 
@@ -57,7 +57,7 @@ resource "aws_subnet" "privsub-001" {
 
 resource "aws_subnet" "privsub-002" {
   vpc_id     = aws_vpc.project-10.id
-  cidr_block = "10.0.5.0/24"
+  cidr_block = var.privasub002
   availability_zone = "eu-west-2b"
   map_public_ip_on_launch = true
 
@@ -69,7 +69,7 @@ resource "aws_subnet" "privsub-002" {
 
 resource "aws_subnet" "privsub-003" {
   vpc_id     = aws_vpc.project-10.id
-  cidr_block = "10.0.6.0/24"
+  cidr_block = var.privasub003
   availability_zone = "eu-west-2c"
   map_public_ip_on_launch = true
 
